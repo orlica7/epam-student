@@ -1,0 +1,27 @@
+import java.util.Scanner;
+public class Task3 {
+    public static void main(String[] args) {
+        final double Pi = 3.1415926536;
+        int R1, R2;
+        System.out.println("Enter R1");
+        R1 = Write();
+        System.out.println("Enter R2");
+        R2 = Write();
+        while (R2 > R1) {
+            System.out.println("Error");
+            R2 = Write();
+        }
+        System.out.println("Square of the ring = " + (Pi*Math.pow(R1, 2)-Pi*Math.pow(R2, 2)));
+    }
+
+ static int Write() {
+        Scanner scan = new Scanner(System.in);
+        int a = scan.nextInt();
+        while (a < 0) {
+
+            System.out.println("Error");
+            a = scan.nextInt();
+        }
+     return a;
+    }
+}
