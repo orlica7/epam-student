@@ -1,0 +1,21 @@
+import java.util.Scanner;
+public class Task5 {
+    public static void main(String[] args) {
+        System.out.println("Enter 6-digit number");
+        Scanner scan = new Scanner(System.in);
+        String N = scan.nextLine();
+        while (Integer.parseInt(N) < 100000 || Integer.parseInt(N) > 999999) {
+            System.out.println("Error. Enter 6-digit number");
+            N = scan.nextLine();
+        }
+        char[] n = N.toCharArray();
+        int[] mas = new int[6];
+        float sum = 0, multi = 1;
+        for (int i = 0; i < 6; i++) {
+            mas[i] = Character.getNumericValue(n[i]);
+            sum += mas[i];
+            multi *= mas[i];
+        }
+        System.out.println("Arifmetic average = " + sum/6 + "  Geometr average = " + Math.sqrt(multi));
+    }
+}
