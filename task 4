@@ -1,0 +1,33 @@
+import java.util.Scanner;
+public class Task4 {
+    public static void main(String[]args){
+        boolean t = true;
+        System.out.println("Enter 4-digit number");
+        Scanner scan = new Scanner(System.in);
+        int a = scan.nextInt();
+        while(a<1000|| a>9999){
+            System.out.println("Error. Enter 4-digit number");
+            a = scan.nextInt();
+        }
+        if(((a%10) > ((a/10)%10)) ){
+        while(t){
+        if(((a%10) > ((a/10)%10)) ){
+            a = a / 10;
+        }
+        else t=false;
+
+    } System.out.println("It's an increasing progression");
+        }
+        else if(((a%10) < ((a/10)%10)) ){
+        while(t){
+            if((((a%10)< ((a/10)%10)))) {
+                a = a / 10;
+            }
+        else t=false;
+
+        }
+                System.out.println("It's a decreasing progression ");}
+        if(a>10)
+        System.out.println("No, it's not a progression");
+}
+}
