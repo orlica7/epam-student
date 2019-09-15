@@ -1,0 +1,14 @@
+import java.util.Scanner;
+public class Task2 {
+    public static void main(String[]args){
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Enter the mass of the dinosaur");
+        int   a = scan.nextInt();
+        while(a<0){
+
+            System.out.println("Error, enter a positive number");
+            a = scan.nextInt();}
+        System.out.println("Mass in miligrams = " + a*1000000 + " Mass in grams = " + a*1000 + " Mass in tons =" + a*0.001);
+
+    }
+}
