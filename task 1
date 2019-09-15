@@ -1,0 +1,23 @@
+import java.util.Scanner;
+public class Task1 {
+    public static void main(String[]args){
+        int a , b, c;
+        System.out.println("Insert a");
+        a = Write();
+        System.out.println("Insert b");
+        b = Write();
+        System.out.println("Insert c");
+        c = Write();
+        if(a==b&&a==c){
+                System.out.println("The numbers are equal");
+            else
+                System.out.println("The numbers are different");}
+
+
+    }
+    static int Write(){
+        Scanner scan = new Scanner(System.in);
+        int a = scan.nextInt();
+        return a;
+    }
+}
