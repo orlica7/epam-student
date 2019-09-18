@@ -9,7 +9,7 @@ public class Task3 {
         R2 = Write();
         while (R2 > R1) {
         System.out.println("Error, R2 must be less than R1");
-            System.out.println("Error, enter a positive number");
+          
             R2 = Write();
         }
         System.out.println("Square of the ring = " + (Pi*Math.pow(R1, 2)-Pi*Math.pow(R2, 2)));
