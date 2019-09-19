@@ -1,0 +1,13 @@
+import java.util.Scanner;
+
+public class Input {
+    public static int input() {
+        Scanner scan = new Scanner(System.in);
+        int number = scan.nextInt();
+        while(number < 0){
+            System.out.println("Enter a positive number");
+            number = scan.nextInt();
+        }
+        return number;
+    }
+}
