@@ -7,8 +7,8 @@ public class Main {
         System.out.println("Enter the range");
         int num1 = Input.input();
         int num2 = Input.input();
-        while (num1 == num2) {
-            System.out.println("The numbers must be different! Enter the range again");
+       while (num1 == num2 || num2 < num1) {
+            System.out.println("The numbers must be different and the second number must be more than the first! Enter the range again");
             num1 = Input.input();
             num2 = Input.input();
         }
