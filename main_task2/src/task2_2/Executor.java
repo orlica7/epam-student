@@ -78,14 +78,14 @@ public class Executor {
         System.out.println("NOD = " + nod + " NOK = " + multi / nod);
     }
 
-    public static void howManyDigits(int number) {
-        int quantity = 0;
-        while (number > 0) {
-            if ((number % 10) != ((number / 10) % 10)) {
-                quantity++;
+   public static void howManyDigits(int number) {
+        String str1 = "";
+        do{
+            if(!(str1.contains(String.valueOf(number%10)))){
+                str1 += number%10;
             }
             number /= 10;
-        }
-        System.out.println("The quantity of different digits is " + quantity);
+        } while (number > 0);
+        System.out.println("The quantity of different digits is " + str1.length());
     }
 }
