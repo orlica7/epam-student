@@ -9,17 +9,21 @@ public static int inputNatural(){
     }
     return N;
 }
-
-public static double[][] initialization(double[][] matrix, int A, int B){
+static double[][] initialization(double[][] matrix, int A, int B){
     int diff = B - A;
+    if (diff == 0){
+        System.out.println("Enter different numbers");
+        initialization(matrix, inputNatural(), inputNatural());
+        return matrix;
+    }
     for(int i = 0; i < matrix.length; i++){
         for(int j = 0; j < matrix[i].length; j++){
 matrix[i][j] = (Math.random()*diff);
         }
     }
-    for(int i = 0; i < matrix.length; i++){
-        for(int j = 0; j < matrix[i].length; j++){
-            System.out.printf("%.2f ", matrix[i][j]);
+    for (double[] doubles : matrix) {
+        for (double aDouble : doubles) {
+            System.out.printf("%.2f ", aDouble);
         }
         System.out.println();
     }
