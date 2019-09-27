@@ -1,29 +1,30 @@
 import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
 
-public class Executor {
-    public static void findExtremal(double[][] matrix) {
+class Executor {
+    static void findExtremal(double[][] matrix) {
         double max = matrix[0][0];
         double min = matrix[0][0];
-        for (int i = 0; i < matrix.length; i++) {
-            for (int j = 0; j < matrix[i].length; j++) {
-                if (min > matrix[i][j]) {
-                    min = matrix[i][j];
+        for (double[] doubles : matrix) {
+            for (double aDouble : doubles) {
+                if (min > aDouble) {
+                    min = aDouble;
                 }
-                if (max < matrix[i][j]) {
-                    max = matrix[i][j];
+                if (max < aDouble) {
+                    max = aDouble;
                 }
             }
         }
-        System.out.printf("Min = %.2f Max = %.2f ", min, max);
+        System.out.printf("Min = %.2f Max = %.2f \n", min, max);
+
     }
 
-    public static void findAverage(double[][] matrix) {
+    static void findAverage(double[][] matrix) {
         double sum = 0, multi = 1;
         double quantity = 0;
-        for (int i = 0; i < matrix.length; i++) {
-            for (int j = 0; j < matrix[i].length; j++) {
-                sum += matrix[i][j];
-                multi *= matrix[i][j];
+        for (double[] doubles : matrix) {
+            for (double aDouble : doubles) {
+                sum += aDouble;
+                multi *= aDouble;
                 quantity++;
             }
         }
@@ -31,7 +32,7 @@ public class Executor {
         System.out.println();
     }
 
-    public static double findLocalMin(double[][] matrix) {
+    static double findLocalMin(double[][] matrix) {
         int k1 = 0;
         int k2 = 0;
         for (int i = 0; i < matrix.length; i++) {
@@ -41,12 +42,14 @@ public class Executor {
                         k1 = i+1;
                         k2 = j+1;
                         System.out.println("The position of mininmum is " + k1 + " " + k2);
+                        return matrix[i][j];
                     }
                 } else if ((i == 0) && (j == matrix[0].length - 1)) {
                     if ((matrix[i][j] < matrix[i][j - 1]) && (matrix[i][j] < matrix[i + 1][j])) {
                         k1 = i+1;
                         k2 = j+1;
                         System.out.println("The position of mininmum is " + k1 + " " + k2);
+                        return matrix[i][j];
                     }
                 } else if ((i == matrix.length - 1) && (j == 0)) {
                     if ((matrix[i][j] < matrix[i - 1][j]) && (matrix[i][j] < matrix[i][j + 1])) {
@@ -59,43 +62,49 @@ public class Executor {
                         k1 = i+1;
                         k2 = j+1;
                         System.out.println("The position of mininmum is " + k1 + " " + k2);
+                        return matrix[i][j];
                     }
                 } else if (i == 0) {
                     if ((matrix[i][j] < matrix[i][j - 1]) && (matrix[i][j] < matrix[i + 1][j]) && (matrix[i][j] < matrix[i][j + 1])) {
                         k1 = i+1;
                         k2 = j+1;
                         System.out.println("The position of mininmum is " + k1 + " " + k2);
+                        return matrix[i][j];
                     }
                 } else if (i == matrix.length - 1) {
                     if ((matrix[i][j] < matrix[i][j - 1]) && (matrix[i][j] < matrix[i - 1][j]) && (matrix[i][j] < matrix[i][j + 1])) {
                         k1 = i+1;
                         k2 = j+1;
                         System.out.println("The position of mininmum is " + k1 + " " + k2);
+                        return matrix[i][j];
                     }
                 } else if (j == 0) {
                     if ((matrix[i][j] < matrix[i][j + 1]) && (matrix[i][j] < matrix[i + 1][j]) && (matrix[i][j] < matrix[i - 1][j])) {
                         k1 = i+1;
                         k2 = j+1;
                         System.out.println("The position of mininmum is " + k1 + " " + k2);
+                        return matrix[i][j];
                     }
                 } else if (j == matrix[0].length - 1) {
                     if ((matrix[i][j] < matrix[i][j - 1]) && (matrix[i][j] < matrix[i + 1][j]) && (matrix[i][j] < matrix[i - 1][j])) {
                         k1 = i+1;
                         k2 = j+1;
                         System.out.println("The position of mininmum is " + k1 + " " + k2);
+                        return matrix[i][j];
                     }
                 } else {
                     if ((matrix[i][j] < matrix[i][j - 1]) && (matrix[i][j] < matrix[i][j + 1]) && (matrix[i][j] < matrix[i - 1][j]) && (matrix[i][j] < matrix[i + 1][j])) {
                         k1 = i+1;
                         k2 = j+1;
                         System.out.println("The position of mininmum is " + k1 + " " + k2);
+                        return matrix[i][j];
                     }
                 }
                 }
             }
         return -1;
         }
-    public static double findLocalMax(double[][] matrix) {
+    static double findLocalMax(double[][] matrix) {
         int k1 = 0;
         int k2 = 0;
         for (int i = 0; i < matrix.length; i++){
@@ -105,54 +114,63 @@ public class Executor {
                         k1 = i+1;
                         k2 = j+1;
                         System.out.println("The position of maximum is " + k1 + " " + k2);
+                        return matrix[i][j];
                     }
                 }else if ((i == 0) && (j == matrix[0].length - 1)){
                     if ((matrix[i][j] > matrix[i][j-1]) && (matrix[i][j] > matrix[i+1][j])){
                         k1 = i+1;
                         k2 = j+1;
                         System.out.println("The position of maximum is " + k1 + " " + k2);
+                        return matrix[i][j];
                     }
                 }else if ((i == matrix.length - 1) && (j == 0)){
                     if ((matrix[i][j] > matrix[i-1][j]) && (matrix[i][j] > matrix[i][j+1])){
                         k1 = i+1;
                         k2 = j+1;
                         System.out.println("The position of maximum is " + k1 + " " + k2);
+                        return matrix[i][j];
                     }
                 }else if ((i == matrix.length - 1) && (j == matrix[0].length - 1)){
                     if ((matrix[i][j] > matrix[i][j-1]) && (matrix[i][j] > matrix[i-1][j])){
                         k1 = i+1;
                         k2 = j+1;
                         System.out.println("The position of maximum is " + k1 + " " + k2);
+                        return matrix[i][j];
                     }
                 } else if (i == 0) {
                     if ((matrix[i][j] > matrix[i][j - 1]) && (matrix[i][j] > matrix[i + 1][j]) && (matrix[i][j] > matrix[i][j + 1])) {
                         k1 = i+1;
                         k2 = j+1;
                         System.out.println("The position of maximum is " + k1 + " " + k2);
+                        return matrix[i][j];
                     }
                 } else if (i == matrix.length - 1) {
                     if ((matrix[i][j] > matrix[i][j - 1]) && (matrix[i][j] > matrix[i - 1][j]) && (matrix[i][j] > matrix[i][j + 1])) {
                         k1 = i+1;
                         k2 = j+1;
                         System.out.println("The position of maximum is " + k1 + " " + k2);
+                        return matrix[i][j];
                     }
                 } else if (j == 0) {
                     if ((matrix[i][j] > matrix[i][j + 1]) && (matrix[i][j] > matrix[i + 1][j]) && (matrix[i][j] > matrix[i - 1][j])) {
                         k1 = i+1;
                         k2 = j+1;
                         System.out.println("The position of maximum is " + k1 + " " + k2);
+                        return matrix[i][j];
                     }
                 } else if (j == matrix[0].length - 1) {
                     if ((matrix[i][j] > matrix[i][j - 1]) && (matrix[i][j] > matrix[i + 1][j]) && (matrix[i][j] > matrix[i - 1][j])) {
                         k1 = i+1;
                         k2 = j+1;
                         System.out.println("The position of maximum is " + k1 + " " + k2);
+                        return matrix[i][j];
                     }
                 } else {
                     if ((matrix[i][j] > matrix[i][j - 1]) && (matrix[i][j] > matrix[i][j + 1]) && (matrix[i][j] > matrix[i - 1][j]) && (matrix[i][j] > matrix[i + 1][j])) {
                         k1 = i+1;
                         k2 = j+1;
                         System.out.println("The position of maximum is " + k1 + " " + k2);
+                        return matrix[i][j];
                     }
                 }
             }
@@ -160,14 +178,13 @@ public class Executor {
         return -1;
     }
 
-    public static void transport(double[][] matrix) {
+    static void transport(double[][] matrix) {
         System.out.println("Transported matrix is:");
         for (int i = 0; i < matrix[0].length; i++) {
-            for (int j = 0; j < matrix.length; j++) {
-                System.out.printf("%.2f ", matrix[j][i]);
+            for (double[] doubles : matrix) {
+                System.out.printf("%.2f ", doubles[i]);
             }
             System.out.println();
         }
     }
 }
-
