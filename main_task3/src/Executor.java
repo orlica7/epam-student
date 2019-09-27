@@ -1,5 +1,3 @@
-import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
-
 class Executor {
     static void findExtremal(double[][] matrix) {
         double max = matrix[0][0];
